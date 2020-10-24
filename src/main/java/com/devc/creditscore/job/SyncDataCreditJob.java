@@ -9,7 +9,7 @@ public class SyncDataCreditJob extends QuartzJobBean{
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
 		// TODO Auto-generated method stub
-		
+		//TODO read data from file and update database
 	}
 
 }
