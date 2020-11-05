@@ -33,7 +33,7 @@ public class CreditScore {
 	@Type(type="uuid-char")
 	private UUID id;
 	@Column(unique = true)
-	private String phone;
-	private double score;
+	private String msisdn;
+	private double  percent;
 	
 }
