@@ -1,7 +1,7 @@
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/spring_batch?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://64.227.30.87:3306/spring_batch?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
     password: 1234
     hikari:
@@ -14,11 +14,18 @@ spring:
         useServerPrepStmts: true
   jpa:
     show-sql: true
-    hibernate:      ddl-auto: validate
-  batch:
-    initialize-schema: always    
 config:
  base-value: 
   from-value: 300
-  to-value: 500    
-  run-job: false
+  to-value: 500
+  run-job: true
+keycloak:  realm: microservice
+  auth-server-url: http://64.227.30.87:8080/auth
+  ssl-required: external
+  resource: credit-api
+  credentials:    secret: 28d7da30-e85e-4712-8deb-b8ba1d78d827
+  use-resource-role-mappings: true
+  bearer-only: true     
+server:  port: 8083
+  servlet:    context-path: /creditscore
+  
